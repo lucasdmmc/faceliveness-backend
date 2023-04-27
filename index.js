@@ -1,5 +1,7 @@
 import express from 'express'
+import cors from 'cors'
 const app = express();
+app.use(cors());
 
 import { createSessionHandler } from './pages/api/createSession.js'
 
