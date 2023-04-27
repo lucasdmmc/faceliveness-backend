@@ -1,11 +1,11 @@
 import { getRekognitionClient } from '../../helpers/rekognition.js';
+import { createSessionHandler } from './createSession.js';
 
-export async function getSessionResultHandler(req, res) {
+export async function getSessionResultHandler(sessionId) {
     const rekognition = await getRekognitionClient();
-    const response = await rekognition.getFaceLivenessSessionResults(req.data.sessionId).then();
-    
-    res.status(200).json({
+    const response = await rekognition.getFaceLivenessSessionResults({ SessionId: sessionId }).then();
+    return {
         sessionId: response.SessionId,
         confidence: response.Confidence,
-    });
+    };
 }

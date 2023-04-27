@@ -12,18 +12,15 @@
       "AmplifyAppId": "d295ipz9xu6ohn"
     },
     "categories": {
-      "auth": {
-        "facelivenessbackendbe3ba04c": {},
-        "userPoolGroups": {}
-      },
       "function": {
         "AdminQueries818fb710": {
           "deploymentBucketName": "amplify-facelivenessbackend-dev-181229-deployment",
           "s3Key": "amplify-builds/AdminQueries818fb710-566857764947344d4470-build.zip"
         }
       },
-      "api": {
-        "AdminQueries": {}
+      "auth": {
+        "facelivenessbackendbe3ba04c": {},
+        "userPoolGroups": {}
       }
     }
   }
