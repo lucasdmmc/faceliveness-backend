@@ -1,7 +1,7 @@
 // helpers/rekognition.js
 
 import { Amplify, withSSRContext } from 'aws-amplify';
-import {Rekognition} from '@aws-sdk/client-rekognition';
+import { Rekognition } from '@aws-sdk/client-rekognition';
 import awsExports from '../src/aws-exports.js';
 
 Amplify.configure({ ...awsExports, ssr: true });
