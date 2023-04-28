@@ -7,5 +7,7 @@ export async function getSessionResultHandler(sessionId) {
     return {
         sessionId: response.SessionId,
         confidence: response.Confidence,
+        referenceImage: response.ReferenceImage,
+        status: response.Status
     };
 }
