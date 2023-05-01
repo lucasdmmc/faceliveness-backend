@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "facelivenessbackendbe3ba04c_identitypool_be3ba04c",
+    "identityPoolName": "faceliveness03aa539e_identitypool_03aa539e",
     "allowUnauthenticatedIdentities": true,
-    "resourceNameTruncated": "facelibe3ba04c",
-    "userPoolName": "facelivenessbackendbe3ba04c_userpool_be3ba04c",
+    "resourceNameTruncated": "faceli03aa539e",
+    "userPoolName": "faceliveness03aa539e_userpool_03aa539e",
     "autoVerifiedAttributes": [
       "phone_number"
     ],
@@ -31,14 +31,14 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "facelibe3ba04c_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "faceli03aa539e_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "be3ba04c",
-    "resourceName": "facelivenessbackendbe3ba04c",
+    "sharedId": "03aa539e",
+    "resourceName": "faceliveness03aa539e",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "manual",
     "userPoolGroupList": [
-      "samplePool"
+      "edMyUserpool"
     ],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
@@ -59,10 +59,9 @@
     "dependsOn": [],
     "thirdPartyAuth": false,
     "userPoolGroups": true,
-    "adminQueries": true,
+    "adminQueries": false,
     "triggers": {},
     "hostedUI": false,
-    "adminQueryGroup": "samplePool",
     "authProviders": [],
     "parentStack": {
       "Ref": "AWS::StackId"
