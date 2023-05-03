@@ -1,13 +1,23 @@
 import { getRekognitionClient } from '../../helpers/rekognition.js';
-import { createSessionHandler } from './createSession.js';
 
-export async function getSessionResultHandler(sessionId) {
+export async function getSessionResultHandler(sessionID) {
+  try {
     const rekognition = await getRekognitionClient();
-    const response = await rekognition.getFaceLivenessSessionResults({ SessionId: sessionId }).then();
-    return {
-        sessionId: response.SessionId,
-        confidence: response.Confidence,
-        referenceImage: response.ReferenceImage,
-        status: response.Status
-    };
+    const response = await rekognition.getFaceLivenessSessionResults({ SessionId: sessionID });
+    
+    if (!response) {
+      return {
+        sessionId: null,
+        confidence: null,
+      };
+    }
+    
+    const sessionId = response.SessionId;
+    const confidence = response.Confidence;
+    
+    return { sessionId, confidence };
+  } catch (error) {
+    console.error(error);
+    return { message: 'Internal Server Error' };
+  }
 }
