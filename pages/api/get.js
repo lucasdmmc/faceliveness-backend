@@ -2,19 +2,15 @@
 
 import { getRekognitionClient } from '../../helpers/rekognition';
 
-function isLiveFace(confidence) {
-    return confidence > 90;
-}
-
-export default async function handler(request, response) {
-    const rekognitionClient = await getRekognitionClient(request);
-    const { sessionId, confidence } = await rekognitionClient.getFaceLivenessSessionResults({
-        SessionId: request.query.sessionId,
+export default async function handler(req, res) {
+    const rekognition = await getRekognitionClient();
+    const response = await rekognition.getFaceLivenessSessionResults({
+        SessionId: req.query.sessionId,
     }).promise();
-
-    const isLive = isLiveFace(confidence);
     
-    response.status(200).json({
+    const isLive = response.Confidence > 90;
+    
+    res.status(200).json({
         isLive,
     });
 }

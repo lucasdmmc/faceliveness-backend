@@ -1,14 +1,10 @@
 import { getRekognitionClient } from '../../helpers/rekognition.js';
 
-export async function createSessionHandler(request, response) {
-  try {
+export async function createSessionHandler(req, res) {
     const rekognition = await getRekognitionClient();
-    const rekognitionResponse = await rekognition.createFaceLivenessSession().then();
-    const sessionId = rekognitionResponse.SessionId;
+    const response = await rekognition.createFaceLivenessSession().then();
     
-    response.status(200).json({ sessionId });
-  } catch (error) {
-    console.error(error);
-    response.status(500).json({ message: 'Internal Server Error' });
-  }
+    res.status(200).json({
+        sessionId: response.SessionId,
+    });
 }
