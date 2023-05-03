@@ -10,6 +10,10 @@ const app = express();
 // middlewares
 app.use(cors());
 app.use(express.json());
+app.use((req, res, next) => {
+  res.setHeader('X-Frame-Options', 'allow-from https://faceliveness-backend.onrender.com/');
+  next();
+});
 
 // routes
 app.get('/api/createSession', async (request, response) => {
