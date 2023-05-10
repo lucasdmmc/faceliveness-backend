@@ -13,7 +13,7 @@ export async function createSessionHandler(req, res) {
   }
 
 //   const rekognition = await getRekognitionClient();
-//     const response = rekognition.createFaceLivenessSession();
+//     const response = rekognition.createFaceLivenessSession().then();
     
 //     res.status(200).json({
 //         sessionId: response.SessionId,

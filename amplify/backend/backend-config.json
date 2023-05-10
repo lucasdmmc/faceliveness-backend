@@ -1,6 +1,6 @@
 {
   "auth": {
-    "faceliveness03aa539e": {
+    "facelivenessbackendbfdb53fd": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -16,29 +16,15 @@
           "EMAIL"
         ],
         "socialProviders": [],
-        "usernameAttributes": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
         "verificationMechanisms": [
           "PHONE_NUMBER"
         ]
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
-    },
-    "userPoolGroups": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "UserPoolId",
-            "AppClientIDWeb",
-            "AppClientID",
-            "IdentityPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "faceliveness03aa539e"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "Cognito-UserPool-Groups"
     }
   }
 }

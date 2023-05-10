@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "faceliveness03aa539e_identitypool_03aa539e",
+    "identityPoolName": "facelivenessbackendbfdb53fd_identitypool_bfdb53fd",
     "allowUnauthenticatedIdentities": true,
-    "resourceNameTruncated": "faceli03aa539e",
-    "userPoolName": "faceliveness03aa539e_userpool_03aa539e",
+    "resourceNameTruncated": "facelibfdb53fd",
+    "userPoolName": "facelivenessbackendbfdb53fd_userpool_bfdb53fd",
     "autoVerifiedAttributes": [
       "phone_number"
     ],
@@ -24,22 +24,23 @@
     ],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
-    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientRefreshTokenValidity": "120",
     "userpoolClientWriteAttributes": [
       "email"
     ],
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "faceli03aa539e_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "facelibfdb53fd_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "03aa539e",
-    "resourceName": "faceliveness03aa539e",
+    "sharedId": "bfdb53fd",
+    "resourceName": "facelivenessbackendbfdb53fd",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "manual",
-    "userPoolGroupList": [
-      "edMyUserpool"
+    "usernameAttributes": [
+      "email"
     ],
+    "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
     "useEnabledMfas": true,
@@ -58,7 +59,7 @@
     "breakCircularDependency": true,
     "dependsOn": [],
     "thirdPartyAuth": false,
-    "userPoolGroups": true,
+    "userPoolGroups": false,
     "adminQueries": false,
     "triggers": {},
     "hostedUI": false,

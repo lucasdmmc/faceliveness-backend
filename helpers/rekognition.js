@@ -8,14 +8,19 @@ Amplify.configure({ ...awsExports, ssr: true });
 
 export async function getRekognitionClient(req) {
   
-  const { Credentials } = withSSRContext({req});
+  try {
+    const { Credentials } = withSSRContext({req});
   
-  const credentials = await Credentials.get();
-  const rekognitionClient = new Rekognition({
-    region: 'us-east-1',
-    credentials,
-    endpoint: 'https://rekognition.us-east-1.amazonaws.com',
-  });
-
-  return rekognitionClient;
+    const credentials = await Credentials.get();
+    const rekognitionClient = new Rekognition({
+      region: 'us-east-1',
+      credentials,
+      endpoint: 'https://rekognition.us-east-1.amazonaws.com',
+    });
+    return rekognitionClient;
+  } catch (err) {
+      console.error(err);
+      throw new Error('Error getting Rekognition client.');
+  }
+ 
 }
