@@ -8,7 +8,7 @@ export default async function handler(req, res) {
         SessionId: req.query.sessionId,
     }).promise();
     
-    const isLive = response.Confidence > 90;
+    const isLive = response.Confidence >= 65;
     
     res.status(200).json({
         isLive,
